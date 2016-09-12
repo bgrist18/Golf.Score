@@ -1,8 +1,8 @@
 /**
  * Created by brettgrist on 9/12/16.
  */
-Public class Address{
+public class Address{
     String street;
-    Addresss city;
+    String city;
     int yearOfBirth;
 }
