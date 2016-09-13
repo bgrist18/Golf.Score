@@ -7,3 +7,4 @@ public class GolfScore {
     int score;
     boolean underPar;
 }
+
