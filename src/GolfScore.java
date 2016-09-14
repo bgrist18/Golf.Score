@@ -1,4 +1,4 @@
-// Golf Score Caddy
+// Golf Score
 
 public class GolfScore {
     String playerName;
@@ -7,4 +7,3 @@ public class GolfScore {
     int score;
     boolean underPar;
 }
-
