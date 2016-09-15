@@ -6,5 +6,4 @@ public class CellPhoneResearch {
     String modelName;
     int dataAllowence;
     int monthlyCost;
-    boolean satisfiedWithSerive?;
 }
