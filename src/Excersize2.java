@@ -1,34 +1,44 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
- * Created by brettgrist on 9/20/16.
+ * Created by brett on 9/20/16.
  */
-public class Excersize2 {
-    public static void main(String[]) args{
+public class Exercise02 {
+    public static void main(String[] args) {
         Email[] emails = {
-                new Email["alice@gmail.com", "hello,", "yo", false],
-                new Email["bob@gmail.com", "hello,", "yo", false],
-                new Email["charlie@gmail.com", "hello,", "yo", false],
-                new Email["alice@gmail.com", "hello,", "yo", false],
-                new Email["bob@gmail.com", "hello,", "yo", false]
+                new Email("alice@gmail.com", "HELLO", "yo", false),
+                new Email("bob@gmail.com", "HELLO", "yo", false),
+                new Email("charlie@gmail.com", "HELLO", "yo", false),
+                new Email("alice@gmail.com", "HELLO", "yo", false),
+                new Email("bob@gmail.com", "HELLO", "yo", false)
         };
 
-        //hash map that looks like ths:
-        //"alice@gmail.com" -> arraylist of two emails
-        //"bob@gmail.com" -> arraylist of two emails
-        //charlie@gmail.com -> arraylist of one email
-    }
+        // hash map that looks like this:
+        // "alice@gmail.com" -> arraylist of two emails
+        // "bob@gmail.com" -> arraylist of two emails
+        // "charlie@gmail.com" -> arraylist of one email
 
-    HashMap<ArrayList<Email>> emailMap=new HashMap<>>();
+        HashMap<String, ArrayList<Email>> emailMap = new HashMap<>();
 
-    for (Email e : emails) {
-        ArrayList<Email> arr = emailMap.get(e.destination);
-        if (arr ==null) {
-            arr = new ArrayList<>();
-            emailMap.put(e.destination, arr);
+        for (Email e : emails) {
+            ArrayList<Email> arr = emailMap.get(e.destination);
+            if (arr == null) {
+                arr = new ArrayList<>();
+                emailMap.put(e.destination, arr);
+            }
+            arr.add(e);
         }
-        arr.add(e);
+
+        // ALTERNATIVE SOLUTION
+
+        emailMap.clear();
+
+        for (Email e : emails) {
+            if (!emailMap.containsKey(e.destination)) {
+                emailMap.put(e.destination, new ArrayList<>());
+            }
+            emailMap.get(e.destination).add(e);
+        }
     }
-
-
 }
