@@ -1,32 +1,38 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
- * Created by brettgrist on 9/19/16.
+ * Created by brett on 9/19/16.
  */
-public class excersize01 {
+public class Exercise01 {
     public static void main(String[] args) {
         String[] names = {"Alice", "Bob", "Charlie", "David", "Alex", "Beth"};
-        //"A" ["Alice", "Alex)
-        //"B" ["Bob", "Beth")
-        //"C" ["Charlie"]
+        // "A": ["Alice", "Alex"]
+        // "B": ["Bob", "Beth"]
+        // "C": ["Charlie"]
+        // "D": ["David"]
 
-        Hashmap<String, ArrayList<String>> nameMap = new HashMap<>();
-
-        //"A" []
-        //"B" []
-        //"C" []
-        //"D" []
+        HashMap<String, ArrayList<String>> nameMap = new HashMap<>();
 
         for (String name : names) {
-            String firstLetter = String.valueOf(name.charAt(0);
+            String firstLetter = String.valueOf(name.charAt(0));
             nameMap.put(firstLetter, new ArrayList<String>());
         }
 
+        // currently looks like this:
+
+        // "A": []
+        // "B": []
+        // "C": []
+        // "D": []
+
         for (String name : names) {
-            String firstLetter = String.valueOf(name.CharAt(0));
+            String firstLetter = String.valueOf(name.charAt(0));
             ArrayList<String> arr = nameMap.get(firstLetter);
             arr.add(name);
         }
 
-        //Alternative Solution:
+        // ALTERNATIVE SOLUTION:
 
         nameMap.clear();
 
@@ -41,6 +47,5 @@ public class excersize01 {
         }
 
         System.out.println(nameMap);
-
     }
 }
