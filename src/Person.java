@@ -7,10 +7,20 @@ public class Person {
     boolean isAlive;
     static int minimumAge = 18;
 
+
+
     Person(String newName, int newAge, boolean newIsAlive) {
         setName(newName);
         setAge(newAge);
         setIsAlive(newIsAlive);
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public int getMinimumAge() {
+        return minimumAge;
     }
 
     String getName() {
