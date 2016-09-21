@@ -5,6 +5,7 @@ import java.util.HashMap;
  * Created by brett on 9/19/16.
  */
 public class Exercise01 {
+
     public static void main(String[] args) {
         String[] names = {"Alice", "Bob", "Charlie", "David", "Alex", "Beth"};
         // "A": ["Alice", "Alex"]
